@@ -105,13 +105,21 @@
                     <div class="text-center text-sm text-gray-500 sm:text-left">
                         <div class="flex items-center">
                             
+                            <?php $name = "Rafat" ?>
+                            <a href="{{ url('test/'.$name) }}" class="ml-1 underline">
+                                Test
+                            </a>
+
+                            <a href="{{ url('redirect/'.$name) }}" class="ml-1 underline">
+                                Reditect
+                            </a>
 
                             <a href="{{ url('about') }}" class="ml-1 underline">
                                 About
                             </a>
 
 
-                            <a href="{{ URL::to('contact') }}" class="ml-2 underline">
+                            <a href="{{ route('contact.page') }}" class="ml-2 underline">
                                 Contact
                             </a>
                         </div>
