@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,8 @@ Route::get('/about', function (){
 Route::get(md5('contact'), function () {
     return view('contact');
 })->name('contact.page');
+
+
+Route::get('/country', function(Request $request){
+    return view('country')->with('country_name', $request->country);
+})->middleware('country');
