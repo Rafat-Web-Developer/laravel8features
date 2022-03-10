@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Example\FirstController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,7 @@ Route::get('/about', function (){
     return view('about');
 })->name('about');
 
-Route::get(md5('contact'), function () {
-    return view('contact');
-})->name('contact.page');
+Route::get(md5('contact'), [FirstController::class, 'index'])->name('contact.page');
 
 
 Route::get('/country', function(Request $request){
