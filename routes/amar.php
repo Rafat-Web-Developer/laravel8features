@@ -29,6 +29,8 @@ Route::get('/about', function (){
 
 Route::get(md5('contact'), [FirstController::class, 'index'])->name('contact.page');
 
+Route::post('/contact/data', [FirstController::class, 'contactData'])->name('contact.data');
+
 
 Route::get('/country', function(Request $request){
     return view('country')->with('country_name', $request->country);
